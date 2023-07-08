@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link rel="stylesheet" href="estilos/media-query.css">
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
     <!-- Para criar o menu interativo estilo gaveta, na tag do ícone coloque a propriedade onclick="clickMenu(). Despois abra uma tag <script> e escreva o seguinte código:
         <script>
@@ -17,6 +18,16 @@
                     itens.style.display = 'none'
                 } else {
                     itens.style.display = 'block'
+                }
+            }
+            ----------------------------
+            SEGUE CORREÇÃO PARA ERRO DE APARECER MENU EM TELAS GRANDES.
+            
+            function mudouTamanho() {
+                if (window.innerWidth >= 768) {
+                    itens.style.display = 'block'
+                } else {
+                    itens.style.display = 'none'
                 }
             }
         </script>.
@@ -58,6 +69,14 @@
                 itens.style.display = 'none'
             } else {
                 itens.style.display = 'block'
+            }
+        }
+
+        function mudouTamanho() {
+            if (window.innerWidth >= 768) {
+                itens.style.display = 'block'
+            } else {
+                itens.style.display = 'none'
             }
         }
     </script>
